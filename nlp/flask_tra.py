@@ -14,10 +14,11 @@ def my_sentence():
     if request.method == 'POST':
         argsJson = request.data.decode('utf-8')
         argsJson = json.loads(argsJson)
-        # print(argsJson)
+        print(argsJson)
         result = my_bert(sentence=argsJson)
         result = json.dumps(result, ensure_ascii=False)
         # print(type(result))
+        print(result)
         return result
     else:
         return " 'it's not a POST operation! "
